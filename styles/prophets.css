@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; 
+    color: #333;
+    text-align: center;
+}
+
+
+header {
+    background-color: #343a40; 
+    color: white; 
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+
+footer {
+    background-color: #343a40; 
+    color: white;
+    padding: 15px 20px; 
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+    box-sizing: border-box; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+#footer-content {
+    display: flex; 
+    gap: 5px;
+    width: 100%;
+    justify-content:center; 
+}
+
+
+#lastmodified {
+    opacity: 0.8;
+}
+
+main {
+    padding: 0 10px 70px 10px; 
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    justify-content: center;
+}
+
+#cards section {
+    background-color: white; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    transition: transform 0.3s ease;
+    overflow: hidden; 
+}
+
+#cards section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#cards h2 {
+    background-color: #343a40; 
+    color: white; 
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.3em;
+    margin: 0 0 15px 0;
+    box-sizing: border-box;
+}
+
+
+#cards p {
+    margin: 3px 0;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#cards img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover; 
+    margin-top: 15px;
+    padding: 0 20px 20px 20px; 
+}
+

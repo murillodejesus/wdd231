@@ -1,0 +1,33 @@
+{
+  "family_name": "Johnson",
+  "move_in_date": "2025-01-15",
+  "number_of_people": 5,
+  "visited_by_bishopric": true,
+  "family_members": [
+    {
+      "name": "Robert Johnson",
+      "gender": "Male",
+      "birthdate": "1985-04-12"
+    },
+    {
+      "name": "Sarah Johnson",
+      "gender": "Female",
+      "birthdate": "1987-09-23"
+    },
+    {
+      "name": "Emily Johnson",
+      "gender": "Female",
+      "birthdate": "2015-07-01"
+    },
+    {
+      "name": "Michael Johnson",
+      "gender": "Male",
+      "birthdate": "2018-02-14"
+    },
+    {
+      "name": "Grandma Rose Johnson",
+      "gender": "Female",
+      "birthdate": "1955-12-05"
+    }
+  ]
+}
