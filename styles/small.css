@@ -1,0 +1,199 @@
+/* Importação da fonte do Google Fonts (no exemplo, Roboto) */
+:root {
+    --primary-color: #004d40; 
+    --secondary-color: #80cbc4; 
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --completed-card-color: #e0f2f1; 
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* ------------------- HEADER E NAVEGAÇÃO ------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px; 
+    height: auto;
+    margin-right: 10px;
+}
+
+header span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+#menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block; 
+}
+
+nav {
+    background-color: #333;
+}
+
+#main-nav {
+    list-style: none;
+    display: none; 
+    flex-direction: column;
+}
+
+#main-nav.open {
+    display: flex; 
+}
+
+#main-nav li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+#main-nav li a:hover,
+#main-nav li a.active {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* ------------------- MAIN CONTENT ------------------- */
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+section {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Botões de Filtragem */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-buttons button {
+    padding: 8px 15px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Grid de Cursos (Mobile: 1 coluna) */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.course-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.course-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.course-card p {
+    font-size: 0.9rem;
+}
+
+/* Estilo para Cursos Concluídos */
+.course-card.completed {
+    background-color: var(--completed-card-color);
+    border-left: 5px solid var(--primary-color);
+}
+
+.credits-total {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #ccc;
+}
+
+/* ------------------- FOOTER ------------------- */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+.social-media {
+    margin-bottom: 10px;
+}
+
+.social-media img {
+    width: 30px;
+    height: auto;
+    margin: 0 5px;
+    filter: invert(100%); 
+}

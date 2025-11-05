@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 - Página Inicial do Curso</title>
+    <meta name="description" content="Página inicial do curso WDD 231, demonstrando conhecimentos em HTML, CSS e JavaScript.">
+    <meta name="author" content="O Seu Nome">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/site-logo.svg" alt="Logo do Site" loading="lazy" class="logo">
+            <span>O Seu Nome</span>
+        </div>
+        <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
+    </header>
+
+    <nav>
+        <ul id="main-nav">
+            <li><a href="index.html" class="active">🏠 Home</a></li>
+            <li><a href="#">🏛️ Chamber</a></li>
+            <li><a href="#">🎯 Final</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+
+        <section class="summary">
+            <h2>Acerca de Mim</h2>
+            <p>Olá! O meu nome é **O Seu Nome** e sou um estudante de **Tecnologia/Programação**. Esta página é a primeira atribuição do curso WDD 231, demonstrando as minhas competências em HTML semântico, CSS responsivo e JavaScript dinâmico.</p>
+            <p>Estou a estudar em **Sua Localização (Estado/País)**.</p>
+        </section>
+
+        <section class="courses">
+            <h2>Certificado Web e Programação</h2>
+            <div class="filter-buttons">
+                <button id="filter-all">Todos os Cursos</button>
+                <button id="filter-wdd">Cursos WDD</button>
+                <button id="filter-cse">Cursos CSE</button>
+            </div>
+            
+            <div id="course-cards-container" class="card-grid">
+                </div>
+            
+            <p class="credits-total">Créditos Totais Exibidos: <span id="total-credits">0</span></p>
+        </section>
+
+        <section class="info">
+            <h2>Recursos Adicionais</h2>
+            <p>Pode encontrar o repositório deste projeto no meu **GitHub** e conectar-se comigo no **LinkedIn**.</p>
+            <p>Estou focado em aprender sobre **Acessibilidade**, **Melhores Práticas (Best Practices)** e **Otimização SEO** para construir páginas robustas e eficientes.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://github.com/seu-usuario" target="_blank" aria-label="GitHub"><img src="images/github-icon.svg" alt="GitHub"></a>
+            <a href="https://linkedin.com/in/seu-usuario" target="_blank" aria-label="LinkedIn"><img src="images/linkedin-icon.svg" alt="LinkedIn"></a>
+            <a href="#" target="_blank" aria-label="Twitter"><img src="images/twitter-icon.svg" alt="Twitter"></a>
+        </div>
+
+        <p>
+            &copy;<span id="currentyear"></span> | O Seu Nome | Sua Localização
+        </p>
+
+        <p>Última Modificação: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
