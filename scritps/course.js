@@ -1,10 +1,9 @@
-
 const courses = [
     {
         courseCode: "CSE 110",
         name: "Introduction to Web and Computer Programming",
         credits: 2,
-        completed: true 
+        completed: false
     },
     {
         courseCode: "WDD 130",
@@ -22,7 +21,7 @@ const courses = [
         courseCode: "WDD 131",
         name: "Developing Web Applications",
         credits: 3,
-        completed: false
+        completed: true 
     },
     {
         courseCode: "WDD 231",
@@ -44,30 +43,28 @@ const courses = [
     }
 ];
 
-
 const cardsContainer = document.getElementById('course-cards-container');
 const totalCreditsSpan = document.getElementById('total-credits');
 const filterAllBtn = document.getElementById('filter-all');
 const filterWDDBtn = document.getElementById('filter-wdd');
 const filterCSEBtn = document.getElementById('filter-cse');
 
-/**
- *
- * @param {Array} courseArray 
- */
 function displayCourses(courseArray) {
-
     cardsContainer.innerHTML = '';
     
+    if (!cardsContainer) {
+        return; 
+    }
+
     courseArray.forEach(course => {
         const card = document.createElement('div');
-        card.className = `course-card ${course.completed ? 'completed' : ''}`; // Adiciona classe 'completed'
+        card.className = `course-card ${course.completed ? 'completed' : ''}`;
 
         card.innerHTML = `
             <h3>${course.courseCode}</h3>
             <p><strong>Nome:</strong> ${course.name}</p>
             <p><strong>Créditos:</strong> ${course.credits}</p>
-            <p><strong>Status:</strong> ${course.completed ? 'Concluído' : 'Pendente'}</p>
+            <p style="display:none;">${course.completed ? 'Concluído' : 'Pendente'}</p>
         `;
         
         cardsContainer.appendChild(card);
@@ -76,21 +73,12 @@ function displayCourses(courseArray) {
     calculateAndDisplayTotalCredits(courseArray);
 }
 
-/**
- * 
- * @param {Array} courseArray 
- */
 function calculateAndDisplayTotalCredits(courseArray) {
-
-    const totalCredits = courseArray.reduce((sum, course) => sum + course.credits, 0);
-    
+    const completedCourses = courseArray.filter(course => course.completed === true);
+    const totalCredits = completedCourses.reduce((sum, course) => sum + course.credits, 0);
     totalCreditsSpan.textContent = totalCredits;
 }
 
-/**
- * 
- * @param {string} filterType 
- */
 function filterCourses(filterType) {
     let filteredList = [];
     
@@ -99,21 +87,14 @@ function filterCourses(filterType) {
     } else if (filterType === 'CSE') {
         filteredList = courses.filter(course => course.courseCode.startsWith('CSE'));
     } else {
-        // 'all'
         filteredList = courses;
     }
     
     updateButtonStatus(filterType);
-    
     displayCourses(filteredList);
 }
 
-/**
- * 
- * @param {string} activeType 
- */
 function updateButtonStatus(activeType) {
-    // Remove a classe 'active' de todos os botões
     [filterAllBtn, filterWDDBtn, filterCSEBtn].forEach(btn => {
         btn.classList.remove('active');
     });
@@ -127,11 +108,14 @@ function updateButtonStatus(activeType) {
     }
 }
 
-
-// ------------------- INICIALIZAÇÃO -------------------
-
-filterAllBtn.addEventListener('click', () => filterCourses('all'));
-filterWDDBtn.addEventListener('click', () => filterCourses('WDD'));
-filterCSEBtn.addEventListener('click', () => filterCourses('CSE'));
+if (filterAllBtn) {
+    filterAllBtn.addEventListener('click', () => filterCourses('all'));
+}
+if (filterWDDBtn) {
+    filterWDDBtn.addEventListener('click', () => filterCourses('WDD'));
+}
+if (filterCSEBtn) {
+    filterCSEBtn.addEventListener('click', () => filterCourses('CSE'));
+}
 
 filterCourses('all');
