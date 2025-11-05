@@ -80,10 +80,11 @@ nav {
     border-bottom: 1px solid #444;
 }
 
+/* Ajuste de contraste: Cor do texto branco sobre fundo escuro para alto contraste */
 #main-nav li a:hover,
 #main-nav li a.active {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+    background-color: var(--primary-color);
+    color: white;
 }
 
 main {
@@ -218,7 +219,7 @@ footer p {
     color: white;
     font-size: 2rem;
     display: inline-block;
-    padding: 5px; /* Para aumentar a área de clique */
+    padding: 5px;
     transition: color 0.3s;
 }
 

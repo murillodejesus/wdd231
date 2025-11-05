@@ -3,7 +3,7 @@ const courses = [
         courseCode: "CSE 110",
         name: "Introduction to Web and Computer Programming",
         credits: 2,
-        completed: false
+        completed: false 
     },
     {
         courseCode: "WDD 130",

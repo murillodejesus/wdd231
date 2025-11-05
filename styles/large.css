@@ -2,7 +2,7 @@
     
     header {
         padding: 1rem 2rem;
-        display: block; /* Volta para o layout padrão no desktop */
+        display: block; 
     }
 
     .logo-container {
@@ -73,15 +73,15 @@
     }
 
     .social-media {
-        order: 1; /* Coloca os ícones no início */
+        order: 1;
         margin-bottom: 0;
     }
 
     footer p:nth-child(2) {
-        order: 2; /* Meio */
+        order: 2;
     }
 
     footer p:nth-child(3) {
-        order: 3; /* Fim */
+        order: 3;
     }
 }
