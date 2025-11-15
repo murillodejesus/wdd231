@@ -1,4 +1,6 @@
-/* --- Reset/Normalize Básico --- */
+/* ====================================
+   1. RESET E TIPOGRAFIA GERAL
+   ==================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,6 +12,8 @@ body {
     background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -17,7 +21,7 @@ h1, h2, h3, h4 {
 }
 
 a {
-    color: #01923f;
+    color: #01923f; 
     text-decoration: none;
 }
 
@@ -25,27 +29,21 @@ a:hover {
     text-decoration: underline;
 }
 
-body,
-main,
-header,
-footer {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* --- Layout Geral e Container Principal --- */
 #member-display,
 .directory-options,
 header .header-content,
-footer .footer-grid {
+footer .footer-grid,
+#homepage-main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
 }
 
-/* --- Header e Navegação --- */
+/* ====================================
+   2. HEADER E NAVEGAÇÃO
+   ==================================== */
 header {
-    background-color: #343a40;
+    background-color: #343a40; 
     color: white;
     padding: 1rem 0;
 }
@@ -67,7 +65,12 @@ header {
     margin-right: 10px;
 }
 
-/* Botões de Menu e Modo Escuro (Estilização Básica) */
+.site-title-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem; 
+    color: white;
+}
+
 #menu-toggle,
 #dark-mode-toggle {
     background: none;
@@ -81,9 +84,15 @@ header {
 
 .main-nav ul {
     list-style: none;
-    display: flex;
-    justify-content: flex-start;
+    display: none; 
+    flex-direction: column; 
+    width: 100%;
+    text-align: center;
     padding-top: 10px;
+}
+
+.main-nav.open ul {
+    display: flex; 
 }
 
 .main-nav a {
@@ -94,165 +103,13 @@ header {
 
 .main-nav a:hover,
 .main-nav .active {
-    background-color: #01923f;
+    background-color: #017a3a;
     text-decoration: none;
 }
 
-.hero h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    padding: 1rem 0;
-}
-
-/* --- Opções do Diretório (Alternar Visualização) --- */
-.directory-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.view-toggle button {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    background-color: #eee;
-}
-
-.view-toggle button.active {
-    background-color: #01923f;
-    color: white;
-    border-color: #01923f;
-}
-
-/* --- Exibição de Membros --- */
-/* Grid View */
-#member-display.grid-view {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-/* Estilo para o 'Cartão' de cada membro no Grid View */
-.member-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.member-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Estilo para o 'Item' de cada membro no List View */
-#member-display.list-view {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-}
-
-.member-card.list-item {
-    background-color: white;
-    border: 1px solid #eee;
-    padding: 10px 20px;
-    display: grid;
-    grid-template-columns: 100px 1fr 150px;
-    align-items: center;
-}
-
-.member-card.list-item h4 {
-    margin: 0;
-}
-
-.member-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-
 /* ====================================
-   ESTILIZAÇÃO POR NÍVEL DE MEMBRO
+   3. FOOTER
    ==================================== */
-
-/* Estilo Base para todos os cartões (pode ser ajustado) */
-.member-card {
-    border-left: 5px solid transparent;
-    /* Adiciona uma borda esquerda para destaque */
-}
-
-/* --- Nível OURO (Gold) --- */
-.member-card.level-gold {
-    border-color: #FFD700;
-    box-shadow: 0 4px 6px rgba(255, 215, 0, 0.3);
-}
-
-.member-card.level-gold h4 {
-    color: #CC9900;
-}
-
-/* --- Nível PRATA (Silver) --- */
-.member-card.level-silver {
-    border-color: #C0C0C0;
-    box-shadow: 0 2px 4px rgba(192, 192, 192, 0.4);
-}
-
-.member-card.level-silver h4 {
-    color: #777777;
-}
-
-
-/* --- Nível BÁSICO/BRONZE (Basic/Default) --- */
-.member-card.level-basic {
-    border-color: #CD7F32;
-}
-
-.member-card.level-basic h4 {
-    color: #4A4A4A;
-}
-
-/* --- Destaque adicional para o modo LISTA --- */
-.list-view .member-card.list-item {
-    border-left-width: 5px;
-    margin-bottom: 5px;
-    transition: background-color 0.3s;
-}
-
-.list-view .member-card.list-item:hover {
-    background-color: #f0f0f0;
-}
-
-.list-view .member-card.level-gold {
-    background-color: #FFFBE6;
-}
-
-.list-view .member-card.level-silver {
-    background-color: #FAFAFA;
-
-}
-
-/* Estilo para mostrar o nome do nível de afiliação de forma discreta na lista */
-.list-view .membership-level {
-    font-weight: bold;
-    text-align: right;
-}
-
-/* No modo lista, podemos querer destacar a cor do texto do nível */
-.list-view .member-card.level-gold .membership-level {
-    color: #CC9900;
-}
-
-.list-view .member-card.level-silver .membership-level {
-    color: #777777;
-}
-
-.list-view .member-card.level-basic .membership-level {
-    color: #CD7F32;
-}
-
-/* --- Rodapé (Footer) --- */
 footer {
     background-color: #343a40;
     color: white;
@@ -284,35 +141,266 @@ footer {
     color: #adb5bd;
 }
 
+/* ====================================
+   4. LAYOUT DA HOME PAGE (index.html)
+   ==================================== */
 
-/* --- Media Queries para Responsividade (Mobile First) --- */
+#homepage-main {
+    display: grid;
+    gap: 20px;
+}
 
-/* Esconder o menu de navegação em mobile por padrão e mostrá-lo via JS */
-.main-nav ul {
-    display: none;
-    flex-direction: column;
+.hero-section {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero-img {
     width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.hero-section .hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 10;
+    font-size: 1.8rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #01923f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.weather-section, 
+.event-section, 
+#member-spotlights {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#current-weather {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#current-weather img {
+    width: 50px;
+    height: 50px;
+}
+
+.weather-summary {
+    display: flex;
+    align-items: center;
+}
+
+.temp {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#member-spotlights .spotlight-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.spotlight-card {
+    border: 1px solid #ddd;
+    padding: 15px;
     text-align: center;
 }
 
-.main-nav.open ul {
-    display: flex;
+.spotlight-card img {
+    max-width: 80px;
+    margin-bottom: 10px;
 }
 
-/* Tablets e Desktops (a partir de 768px) */
+
+/* ====================================
+   5. LAYOUT DA PÁGINA DIRECTORY
+   ==================================== */
+
+.hero h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+}
+
+.directory-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.view-toggle button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #eee;
+}
+
+.view-toggle button.active {
+    background-color: #01923f;
+    color: white;
+    border-color: #01923f;
+}
+
+#member-display.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.member-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border-left: 5px solid transparent; 
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+}
+
+#member-display.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.member-card.list-item {
+    background-color: white;
+    border: 1px solid #eee;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 100px 1fr 150px;
+    align-items: center;
+    border-left-width: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+/* ====================================
+   6. ESTILIZAÇÃO POR NÍVEL DE MEMBRO
+   ==================================== */
+
+.member-card,
+.spotlight-card {
+    border-left: 8px solid transparent; 
+    transition: all 0.3s ease-in-out;
+}
+
+.member-card.level-gold,
+.spotlight-card.level-gold {
+    border-color: #FFD700;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4); 
+}
+
+.member-card.level-gold h4,
+.spotlight-card.level-gold h3,
+.member-card.level-gold .membership-level {
+    color: #CC9900; 
+}
+
+.list-view .member-card.level-gold,
+.spotlight-card.level-gold {
+    background-color: #FFFBE6;
+}
+
+.member-card.level-silver,
+.spotlight-card.level-silver {
+    border-color: #C0C0C0; 
+    box-shadow: 0 2px 8px rgba(192, 192, 192, 0.3);
+}
+
+.member-card.level-silver h4,
+.spotlight-card.level-silver h3,
+.member-card.level-silver .membership-level {
+    color: #777777; 
+}
+
+.list-view .member-card.level-silver,
+.spotlight-card.level-silver {
+    background-color: #FAFAFA;
+}
+
+.member-card.level-basic {
+    border-color: #CD7F32; 
+}
+
+.member-card.level-basic h4,
+.member-card.level-basic .membership-level {
+    color: #4A4A4A;
+}
+
+.list-view .member-card.level-basic {
+    background-color: #f7f7f7;
+}
+
+.list-view .membership-level {
+    font-weight: bold;
+    text-align: right;
+}
+
+/* ====================================
+   7. MEDIA QUERIES (RESPONSIVIDADE)
+   ==================================== */
+
 @media (min-width: 768px) {
     #menu-toggle {
         display: none;
     }
-
+    
     .main-nav ul {
-        display: flex;
+        display: flex !important;
         flex-direction: row;
         justify-content: center;
     }
 
     .main-nav a {
         padding: 0.5rem 1.5rem;
+    }
+
+    #homepage-main {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto; 
+    }
+    
+    .hero-section {
+        grid-column: 1 / -1;
+    }
+
+    .event-section {
+        grid-column: 1 / 2;
+    }
+
+    .weather-section {
+        grid-column: 2 / 3;
+    }
+    
+    #member-spotlights {
+        grid-column: 3 / 4;
     }
 
     .member-card.list-item {

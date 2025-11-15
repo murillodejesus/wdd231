@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Murillo de Jesus">
     <meta name="description"
-        content="Diretório de Membros da Câmara de Comércio de São Bento do Sul. Encontre empresas locais, eventos e informações.">
+        content="Bem-vindo à Câmara de Comércio de São Bento do Sul. Promovemos negócios locais, eventos e crescimento comunitário.">
 
-    <title>Business Directory | Câmara de Comércio de São Bento do Sul</title>
+    <title>Home | Câmara de Comércio de São Bento do Sul</title>
 
     <link rel="icon" href="images/sbsicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,16 +15,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap"
         rel="stylesheet">
 
-    <meta property="og:title" content="Diretório de Membros da Câmara de Comércio de São Bento do Sul">
+    <meta property="og:title" content="Câmara de Comércio de São Bento do Sul | Hub de Negócios Locais">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://murillodejesus.github.io/wdd231/chamber/directory.html">
+    <meta property="og:url" content="https://murillodejesus.github.io/wdd231/chamber/index.html">
     <meta property="og:image" content="https://murillodejesus.github.io/wdd231/chamber/images/og_image.webp">
-    <meta property="og:description" content="Encontre e apoie os melhores negócios locais de São Bento do Sul.">
-    
+    <meta property="og:description" content="Bem-vindo à Câmara de Comércio de São Bento do Sul.">
+
     <link rel="stylesheet" href="styles/reset.css"> 
     <link rel="stylesheet" href="styles/main.css">
 </head>
-
 <body>
     <header>
         <div class="header-content">
@@ -39,9 +37,9 @@
 
         <nav class="main-nav">
             <ul id="primary-nav">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html" class="active">Business Directory</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
                 <li><a href="join.html">Join</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="events.html">Events</a></li>
@@ -49,26 +47,29 @@
         </nav>
     </header>
 
-    <main>
-        <div class="hero">
-            <h1>Diretório de Membros</h1>
-        </div>
-
-        <section class="directory-options">
-            <div class="view-toggle">
-                <button id="grid-view" class="active">Grid</button>
-                <button id="list-view">Lista</button>
-            </div>
-            <select id="member-filter">
-                <option value="all">Todos os Membros</option>
-                <option value="3">Gold</option>
-                <option value="2">Silver</option>
-                <option value="1">Básico</option>
-            </select>
+    <main id="homepage-main">
+        <section class="hero-section">
+            <h1 class="hero-title">Seja Bem-Vindo à Câmara de Comércio</h1> 
+            <img src="images/hero-home.webp" alt="Imagem Hero da Cidade" class="hero-img">
+            <a href="join.html" class="cta-button">Junte-se a Nós!</a>
         </section>
 
-        <section id="member-display" class="grid-view">
+        <section class="event-section">
+            <h2>Próximo Evento</h2>
+            <p>Não perca nosso Networking Anual na próxima Quarta-feira, 20h. <a href="#">Ver Detalhes</a></p>
         </section>
+
+        <section class="weather-section">
+            <h2>Tempo Atual e Previsão</h2>
+            <div id="current-weather"></div>
+            <div id="weather-forecast"></div>
+        </section>
+
+        <section id="member-spotlights">
+            <h2>Destaques de Membros</h2>
+            <div class="spotlight-container"></div>
+        </section>
+
     </main>
 
     <footer>
@@ -94,7 +95,7 @@
             </div>
         </div>
     </footer>
-    <script src="scripts/main.js" defer></script>
+        <script src="scripts/home.js" defer></script>
+        <script src="scripts/main.js" defer></script>
 </body>
-
 </html>
