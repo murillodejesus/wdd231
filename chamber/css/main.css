@@ -100,7 +100,6 @@ header {
 .main-nav a:hover,
 .main-nav .active {
     background-color: #01923f;
-    /* Cor de destaque */
     text-decoration: none;
 }
 
@@ -136,7 +135,6 @@ header {
 #member-display.grid-view {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Responsivo com 'auto-fit' */
     gap: 20px;
 }
 
@@ -159,7 +157,6 @@ header {
     display: flex;
     flex-direction: column;
     gap: 1px;
-    /* Linhas de separação sutis */
 }
 
 .member-card.list-item {
@@ -168,7 +165,6 @@ header {
     padding: 10px 20px;
     display: grid;
     grid-template-columns: 100px 1fr 150px;
-    /* Exemplo de colunas para lista */
     align-items: center;
 }
 
@@ -195,33 +191,27 @@ header {
 /* --- Nível OURO (Gold) --- */
 .member-card.level-gold {
     border-color: #FFD700;
-    /* Ouro */
     box-shadow: 0 4px 6px rgba(255, 215, 0, 0.3);
-    /* Sombra mais destacada */
 }
 
 .member-card.level-gold h4 {
     color: #CC9900;
-    /* Destaque o título em tom de ouro */
 }
 
 /* --- Nível PRATA (Silver) --- */
 .member-card.level-silver {
     border-color: #C0C0C0;
-    /* Prata */
     box-shadow: 0 2px 4px rgba(192, 192, 192, 0.4);
 }
 
 .member-card.level-silver h4 {
     color: #777777;
-    /* Destaque o título em tom de cinza */
 }
 
 
 /* --- Nível BÁSICO/BRONZE (Basic/Default) --- */
 .member-card.level-basic {
     border-color: #CD7F32;
-    /* Bronze (ou cor neutra para o nível básico) */
 }
 
 .member-card.level-basic h4 {
@@ -229,11 +219,9 @@ header {
 }
 
 /* --- Destaque adicional para o modo LISTA --- */
-/* Certifica-se de que o destaque de nível funcione na visualização de lista */
 .list-view .member-card.list-item {
     border-left-width: 5px;
     margin-bottom: 5px;
-    /* Adiciona algum espaço entre os itens da lista */
     transition: background-color 0.3s;
 }
 
@@ -243,12 +231,11 @@ header {
 
 .list-view .member-card.level-gold {
     background-color: #FFFBE6;
-    /* Fundo leve para ouro */
 }
 
 .list-view .member-card.level-silver {
     background-color: #FAFAFA;
-    /* Fundo leve para prata */
+
 }
 
 /* Estilo para mostrar o nome do nível de afiliação de forma discreta na lista */
@@ -273,7 +260,6 @@ header {
 /* --- Rodapé (Footer) --- */
 footer {
     background-color: #343a40;
-    /* Cor de fundo do Footer (igual ao header) */
     color: white;
     padding: 20px 0;
     margin-top: 2rem;
@@ -291,7 +277,6 @@ footer {
 .footer-social,
 .footer-dev-info {
     flex: 1 1 300px;
-    /* Permite o wrap em telas menores */
 }
 
 .footer-social img {
@@ -302,7 +287,6 @@ footer {
 
 .footer-info a {
     color: #adb5bd;
-    /* Cor mais clara para links no rodapé */
 }
 
 
@@ -324,13 +308,11 @@ footer {
 @media (min-width: 768px) {
     #menu-toggle {
         display: none;
-        /* Esconder o botão de menu em telas maiores */
     }
 
     .main-nav ul {
         display: flex;
         flex-direction: row;
-        /* Voltar para linha em desktop */
         justify-content: center;
     }
 
@@ -339,12 +321,10 @@ footer {
     }
 
     .member-card.list-item {
-        /* Layout mais otimizado para a lista em telas maiores */
         grid-template-columns: 80px 300px 1fr 120px 100px;
     }
 
     .footer-grid {
-        /* Distribuir as colunas igualmente em desktop */
         justify-content: space-around;
     }
 }
