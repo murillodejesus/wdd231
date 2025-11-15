@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Tech Solutions LTDA",
+        "address": "Rua das Inovações, 100",
+        "phone": "(11) 98765-4321",
+        "website": "https://www.techsolutions.com",
+        "image": "tech_logo.webp",
+        "membershipLevel": 3,
+        "description": "Desenvolvimento de software e consultoria em TI."
+    },
+    {
+        "name": "Café Central",
+        "address": "Avenida Principal, 50",
+        "phone": "(11) 5555-1234",
+        "website": "https://www.cafecentral.com",
+        "image": "cafe_central.webp",
+        "membershipLevel": 1,
+        "description": "A melhor cafeteria da cidade, com grãos orgânicos."
+    },
+    {
+        "name": "Silver Transportes",
+        "address": "Rodovia da Prata, KM 5",
+        "phone": "(11) 4002-8922",
+        "website": "https://www.silvertransportes.com.br",
+        "image": "silver_trans.webp",
+        "membershipLevel": 2,
+        "description": "Serviços de transporte e logística com foco na sustentabilidade."
+    },
+    {
+        "name": "Academia Gold Fit",
+        "address": "Praça do Esporte, 20",
+        "phone": "(11) 99888-7766",
+        "website": "https://www.goldfit.com",
+        "image": "gold_fit.webp",
+        "membershipLevel": 3,
+        "description": "A maior e mais completa academia da região."
+    },
+    {
+        "name": "Consultoria Alpha",
+        "address": "Rua dos Empresários, 30",
+        "phone": "(11) 2233-4455",
+        "website": "https://www.consultoriaalpha.org",
+        "image": "alpha_consult.webp",
+        "membershipLevel": 1,
+        "description": "Consultoria especializada em gestão e finanças."
+    },
+    {
+        "name": "Floricultura Primavera",
+        "address": "Rua das Flores, 15",
+        "phone": "(11) 3322-1100",
+        "website": "https://www.floriculturaprimavera.com",
+        "image": "primavera_flor.webp",
+        "membershipLevel": 2,
+        "description": "Flores frescas e arranjos personalizados para todos os eventos."
+    },
+    {
+        "name": "Restaurante Sabor",
+        "address": "Largo da Gastronomia, 1",
+        "phone": "(11) 1098-7654",
+        "website": "https://www.restaurantesabor.com",
+        "image": "sabor_rest.webp",
+        "membershipLevel": 3,
+        "description": "Cozinha contemporânea com ingredientes locais."
+    }
+]

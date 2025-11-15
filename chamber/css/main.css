@@ -1,0 +1,350 @@
+/* --- Reset/Normalize Básico --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* Substitua pela sua tipografia */
+    background-color: #f9f9f9;
+    /* Substitua pela sua cor de fundo */
+    color: #333;
+    /* Substitua pela sua cor de texto */
+    line-height: 1.6;
+}
+
+a {
+    color: #01923f;
+    /* Substitua pela sua cor primária/de link */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Garante que não haja rolagem horizontal desnecessária */
+body,
+main,
+header,
+footer {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* --- Layout Geral e Container Principal --- */
+#member-display,
+.directory-options,
+header .header-content,
+footer .footer-grid {
+    max-width: 1200px;
+    /* Largura máxima para o conteúdo principal */
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* --- Header e Navegação --- */
+header {
+    background-color: #343a40;
+    /* Cor do Header */
+    color: white;
+    padding: 1rem 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    height: 50px;
+    /* Altura da logo */
+    margin-right: 10px;
+}
+
+/* Botões de Menu e Modo Escuro (Estilização Básica) */
+#menu-toggle,
+#dark-mode-toggle {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    /* Altera no mobile */
+    padding-top: 10px;
+}
+
+.main-nav a {
+    color: white;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.main-nav a:hover,
+.main-nav .active {
+    background-color: #01923f;
+    /* Cor de destaque */
+    text-decoration: none;
+}
+
+.hero h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+}
+
+/* --- Opções do Diretório (Alternar Visualização) --- */
+.directory-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.view-toggle button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #eee;
+}
+
+.view-toggle button.active {
+    background-color: #01923f;
+    color: white;
+    border-color: #01923f;
+}
+
+/* --- Exibição de Membros --- */
+/* Grid View */
+#member-display.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Responsivo com 'auto-fit' */
+    gap: 20px;
+}
+
+/* Estilo para o 'Cartão' de cada membro no Grid View */
+.member-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilo para o 'Item' de cada membro no List View */
+#member-display.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    /* Linhas de separação sutis */
+}
+
+.member-card.list-item {
+    background-color: white;
+    border: 1px solid #eee;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 100px 1fr 150px;
+    /* Exemplo de colunas para lista */
+    align-items: center;
+}
+
+.member-card.list-item h4 {
+    margin: 0;
+}
+
+.member-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* ====================================
+   ESTILIZAÇÃO POR NÍVEL DE MEMBRO
+   ==================================== */
+
+/* Estilo Base para todos os cartões (pode ser ajustado) */
+.member-card {
+    border-left: 5px solid transparent;
+    /* Adiciona uma borda esquerda para destaque */
+}
+
+/* --- Nível OURO (Gold) --- */
+.member-card.level-gold {
+    border-color: #FFD700;
+    /* Ouro */
+    box-shadow: 0 4px 6px rgba(255, 215, 0, 0.3);
+    /* Sombra mais destacada */
+}
+
+.member-card.level-gold h4 {
+    color: #CC9900;
+    /* Destaque o título em tom de ouro */
+}
+
+/* --- Nível PRATA (Silver) --- */
+.member-card.level-silver {
+    border-color: #C0C0C0;
+    /* Prata */
+    box-shadow: 0 2px 4px rgba(192, 192, 192, 0.4);
+}
+
+.member-card.level-silver h4 {
+    color: #777777;
+    /* Destaque o título em tom de cinza */
+}
+
+
+/* --- Nível BÁSICO/BRONZE (Basic/Default) --- */
+.member-card.level-basic {
+    border-color: #CD7F32;
+    /* Bronze (ou cor neutra para o nível básico) */
+}
+
+.member-card.level-basic h4 {
+    color: #4A4A4A;
+}
+
+/* --- Destaque adicional para o modo LISTA --- */
+/* Certifica-se de que o destaque de nível funcione na visualização de lista */
+.list-view .member-card.list-item {
+    border-left-width: 5px;
+    margin-bottom: 5px;
+    /* Adiciona algum espaço entre os itens da lista */
+    transition: background-color 0.3s;
+}
+
+.list-view .member-card.list-item:hover {
+    background-color: #f0f0f0;
+}
+
+.list-view .member-card.level-gold {
+    background-color: #FFFBE6;
+    /* Fundo leve para ouro */
+}
+
+.list-view .member-card.level-silver {
+    background-color: #FAFAFA;
+    /* Fundo leve para prata */
+}
+
+/* Estilo para mostrar o nome do nível de afiliação de forma discreta na lista */
+.list-view .membership-level {
+    font-weight: bold;
+    text-align: right;
+}
+
+/* No modo lista, podemos querer destacar a cor do texto do nível */
+.list-view .member-card.level-gold .membership-level {
+    color: #CC9900;
+}
+
+.list-view .member-card.level-silver .membership-level {
+    color: #777777;
+}
+
+.list-view .member-card.level-basic .membership-level {
+    color: #CD7F32;
+}
+
+/* --- Rodapé (Footer) --- */
+footer {
+    background-color: #343a40;
+    /* Cor de fundo do Footer (igual ao header) */
+    color: white;
+    padding: 20px 0;
+    margin-top: 2rem;
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-info,
+.footer-social,
+.footer-dev-info {
+    flex: 1 1 300px;
+    /* Permite o wrap em telas menores */
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.footer-info a {
+    color: #adb5bd;
+    /* Cor mais clara para links no rodapé */
+}
+
+
+/* --- Media Queries para Responsividade (Mobile First) --- */
+
+/* Esconder o menu de navegação em mobile por padrão e mostrá-lo via JS */
+.main-nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.main-nav.open ul {
+    display: flex;
+}
+
+/* Tablets e Desktops (a partir de 768px) */
+@media (min-width: 768px) {
+    #menu-toggle {
+        display: none;
+        /* Esconder o botão de menu em telas maiores */
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: row;
+        /* Voltar para linha em desktop */
+        justify-content: center;
+    }
+
+    .main-nav a {
+        padding: 0.5rem 1.5rem;
+    }
+
+    .member-card.list-item {
+        /* Layout mais otimizado para a lista em telas maiores */
+        grid-template-columns: 80px 300px 1fr 120px 100px;
+    }
+
+    .footer-grid {
+        /* Distribuir as colunas igualmente em desktop */
+        justify-content: space-around;
+    }
+}
