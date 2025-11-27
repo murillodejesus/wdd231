@@ -18,6 +18,7 @@ body {
 
 h1, h2, h3, h4 {
     font-family: 'Oswald', sans-serif; 
+    margin-bottom: 0.5rem;
 }
 
 a {
@@ -306,47 +307,63 @@ footer {
    ==================================== */
 
 .member-card,
-.spotlight-card {
+.spotlight-card,
+.level-card { 
     border-left: 8px solid transparent; 
     transition: all 0.3s ease-in-out;
 }
 
 .member-card.level-gold,
-.spotlight-card.level-gold {
+.spotlight-card.level-gold,
+.level-card.level-gold { 
     border-color: #FFD700;
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4); 
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    background-color: #FFFBE6; /* Fundo */
 }
 
 .member-card.level-gold h4,
 .spotlight-card.level-gold h3,
+.level-card.level-gold h3,
 .member-card.level-gold .membership-level {
     color: #CC9900; 
 }
 
-.list-view .member-card.level-gold,
-.spotlight-card.level-gold {
-    background-color: #FFFBE6;
-}
-
 .member-card.level-silver,
-.spotlight-card.level-silver {
+.spotlight-card.level-silver,
+.level-card.level-silver { 
     border-color: #C0C0C0; 
     box-shadow: 0 2px 8px rgba(192, 192, 192, 0.3);
+    background-color: #FAFAFA;
 }
 
 .member-card.level-silver h4,
 .spotlight-card.level-silver h3,
+.level-card.level-silver h3,
 .member-card.level-silver .membership-level {
     color: #777777; 
 }
 
-.list-view .member-card.level-silver,
-.spotlight-card.level-silver {
-    background-color: #FAFAFA;
+.level-card.level-np {
+    border-color: #01923f; /* Verde da Câmara */
+    background-color: #E6FFF1; /* Fundo verde muito claro */
+}
+
+.level-card.level-np h3 {
+    color: #01923f;
+}
+
+.level-card.level-bronze {
+    border-color: #CD7F32;
+    box-shadow: 0 1px 5px rgba(205, 127, 50, 0.2);
+    background-color: #FFF5EC; 
+}
+
+.level-card.level-bronze h3 {
+    color: #CD7F32; 
 }
 
 .member-card.level-basic {
-    border-color: #CD7F32; 
+    border-color: #CD7F32;
 }
 
 .member-card.level-basic h4,
@@ -362,7 +379,6 @@ footer {
     font-weight: bold;
     text-align: right;
 }
-
 /* ====================================
    7. MEDIA QUERIES (RESPONSIVIDADE)
    ==================================== */
@@ -410,4 +426,245 @@ footer {
     .footer-grid {
         justify-content: space-around;
     }
+}
+
+/* ====================================
+   8. LAYOUT DA PÁGINA JOIN (join.html)
+   ==================================== */
+
+.join-content-grid {
+    display: grid;
+    gap: 30px;
+    padding: 1rem;
+}
+
+.join-content-grid h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0; 
+    grid-column: 1 / -1; 
+}
+
+.membership-form fieldset {
+    margin: 2rem 0;
+    border: 1px solid #01923f; 
+    border-radius: 8px;
+    padding: 1rem 2%;
+}
+
+.membership-form legend {
+    color: #01923f;
+    margin: 0 1rem;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.membership-form label.top {
+    display: block;
+    padding-top: 1rem;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.membership-form label.top input,
+.membership-form label.top select,
+.membership-form label.top textarea {
+    display: block;
+    font-size: 1rem;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 20rem;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.membership-form label.top textarea {
+    height: 100px;
+    max-width: 100%;
+}
+
+.membership-form .submit-btn {
+    border: none;
+    background-color: #01923f;
+    color: white;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0 2rem 0;
+    width: 100%;
+    max-width: 20rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.membership-levels {
+    text-align: center;
+}
+
+.membership-levels h2 {
+    margin-bottom: 1rem;
+}
+
+.level-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
+}
+
+.level-np { border-left: 5px solid #ccc; }
+.level-bronze { border-left: 5px solid #CD7F32; }
+
+/* --- Modals --- */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* ====================================
+   9. MEDIA QUERIES (join.html em Desktop)
+   ==================================== */
+@media (min-width: 768px) {
+    .join-content-grid {
+        grid-template-columns: 2fr 1fr; 
+    }
+
+    .membership-levels {
+        grid-column: 2 / 3; 
+    }
+
+    .membership-form {
+        grid-column: 1 / 2;
+    }
+
+    .membership-form label.top input,
+    .membership-form label.top select,
+    .membership-form .submit-btn {
+        max-width: 100%;
+    }
+    
+    .membership-levels h2 {
+        text-align: left;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+    }
+}
+
+/* ====================================
+   10. LAYOUT DA PÁGINA THANK YOU (thankyou.html)
+   ==================================== */
+
+#thankyou-main {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.confirmation-message {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+#thankyou-main h1 {
+    color: #017a3a;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.confirmation-message p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+#confirmation-details {
+    margin: 20px 0;
+    text-align: left;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+#confirmation-details table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+#confirmation-details table tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+#confirmation-details table td {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+#confirmation-details table strong {
+    font-weight: 700;
+    color: #333;
+}
+
+
+.confirmation-message .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #343a40; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.confirmation-message .cta-button:hover {
+    background-color: #4a545e;
+    text-decoration: none;
 }

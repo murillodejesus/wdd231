@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Murillo de Jesus">
+    <meta name="description"
+        content="Bem-vindo à Câmara de Comércio de São Bento do Sul. Promovemos negócios locais, eventos e crescimento comunitário.">
+
+    <title>Join | Câmara de Comércio de São Bento do Sul</title>
+
+    <link rel="icon" href="images/sbsicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap"
+        rel="stylesheet">
+
+    <meta property="og:title" content="Câmara de Comércio de São Bento do Sul | Hub de Negócios Locais">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://murillodejesus.github.io/wdd231/chamber/index.html">
+    <meta property="og:image" content="https://murillodejesus.github.io/wdd231/chamber/images/og_image.webp">
+    <meta property="og:description" content="Bem-vindo à Câmara de Comércio de São Bento do Sul.">
+
+    <link rel="stylesheet" href="styles/reset.css"> 
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/og_image.webp" alt="Logo da Câmara de Comércio de São Bento do Sul" class="logo">
+                <p class="site-title-name">Câmara de Comércio de São Bento do Sul</p>
+            </a>
+            <button id="dark-mode-toggle" aria-label="Alternar modo escuro"></button>
+            <button id="menu-toggle" class="menu-button">☰</button>
+        </div>
+
+        <nav class="main-nav">
+            <ul id="primary-nav">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="join-main">    
+        <div class="join-content-grid">
+            <h1>Aplicação para Membro da Câmara</h1>
+            <form method="get" action="thankyou.html" class="membership-form">
+                <fieldset>
+                    <legend>Informações do Candidato</legend>
+                    
+                    <label class="top">Primeiro Nome* <input type="text" name="fname" title="Primeiro Nome" required autocomplete="given-name">
+                    </label>
+                    
+                    <label class="top">Sobrenome* <input type="text" name="lname" title="Sobrenome" required autocomplete="family-name">
+                    </label>
+                    
+                    <label class="top">Título/Cargo
+                        <input type="text" name="orgtitle" title="Título Organizacional" autocomplete="organization-title" 
+                            pattern="[A-Za-z\s\-]{7,}" 
+                            placeholder="Ex: Gerente Geral" required>
+                    </label>
+
+                    <label class="top">Email* <input type="email" name="email" title="Email" required autocomplete="email" placeholder="exemplo@organizacao.com">
+                    </label>
+                    
+                    <label class="top">Celular* <input type="tel" name="phone" title="Telefone Celular" required autocomplete="tel">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Informações da Organização</legend>
+
+                    <label class="top">Nome da Organização*
+                        <input type="text" name="orgname" title="Nome da Organização" required autocomplete="organization">
+                    </label>
+                    
+                    <label class="top">Nível de Afiliação Desejado*
+                        <select name="membership" title="Nível de Afiliação" required>
+                            <option value="" disabled selected>Selecione o Nível...</option>
+                            <option value="np">NP Membership (Sem Taxa)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <label class="top">Descrição da Organização
+                        <textarea name="orgdescription" title="Descrição da Organização"></textarea>
+                    </label>
+                </fieldset>
+                
+                <input type="hidden" name="timestamp" id="timestamp">
+                
+                <input type="submit" value="Enviar Aplicação" class="submit-btn">
+
+            </form>
+            
+            <section class="membership-levels">
+                <h2>Níveis de Afiliação</h2>
+                <div id="card-np" class="level-card level-np" style="opacity: 0;">
+                    <h3>NP Membership</h3>
+                    <p>Para organizações sem fins lucrativos.</p>
+                    <a href="#" data-modal-target="modal-np">Ver Benefícios</a>
+                </div>
+                
+                <div id="card-bronze" class="level-card level-bronze" style="opacity: 0;">
+                    <h3>Bronze Membership</h3>
+                    <p>O ponto de partida para pequenos negócios.</p>
+                    <a href="#" data-modal-target="modal-bronze">Ver Benefícios</a>
+                </div>
+
+                <div id="card-silver" class="level-card level-silver" style="opacity: 0;">
+                    <h3>Silver Membership</h3>
+                    <p>Ideal para crescimento com benefícios exclusivos.</p>
+                    <a href="#" data-modal-target="modal-silver">Ver Benefícios</a>
+                </div>
+
+                <div id="card-gold" class="level-card level-gold" style="opacity: 0;">
+                    <h3>Gold Membership</h3>
+                    <p>O nível premium com maior visibilidade (Spotlights).</p>
+                    <a href="#" data-modal-target="modal-gold">Ver Benefícios</a>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <div id="modal-np" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h4>Benefícios NP Membership (Sem Taxa)</h4>
+            <ul>
+                <li>Inclusão básica no Diretório de Membros.</li>
+                <li>Acesso a eventos comunitários (entrada paga).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-bronze" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h4>Benefícios Bronze Membership</h4>
+            <ul>
+                <li>Benefícios NP + Desconto em treinamentos.</li>
+                <li>Desconto em eventos.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-silver" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h4>Benefícios Silver Membership</h4>
+            <ul>
+                <li>Benefícios Bronze + Posição no Diretório aprimorada.</li>
+                <li>**Elegível para Destaques (Spotlights) na Home Page.**</li>
+                <li>Acesso prioritário a eventos de networking.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-gold" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h4>Benefícios Gold Membership</h4>
+            <ul>
+                <li>Benefícios Silver + Posição de Destaque Garantida (Spotlight).</li>
+                <li>Pacote de Publicidade e Mídia Social (Publicações).</li>
+                <li>Convites VIP para eventos.</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h3>Câmara de Comércio de São Bento do Sul</h3>
+                <p>123 Rua Fictícia, Sala 456</p>
+                <p>São bento do sul, Santa Catarina - Brasil </p>
+                <p>Email: <a href="mailto:info@saobentodosul.org">info@saobentodosul.org</a></p>
+                <p>Telefone: +55 (47) 5555-1234</p>
+            </div>
+
+            <div class="footer-social">
+                <a href="#"><img src="images/youtube.webp" alt="Link para o Perfil do YouTube da Câmara"></a>
+                <a href="#"><img src="images/x.webp" alt="Link para o Perfil do Twitter/X da Câmara"></a>
+                <a href="#"><img src="images/linkedin.webp" alt="Link para o Perfil do LinkedIn da Câmara"></a>
+            </div>
+
+            <div class="footer-dev-info">
+                <p>&copy; <span id="currentyear"></span> Câmara de Comércio de [Sua Cidade]</p>
+                <p>Seu Nome Completo | WDD 231 Class Project</p>
+                <p>Última Modificação: <span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+        <script src="scripts/home.js" defer></script>
+        <script src="scripts/main.js" defer></script>
+        <script src="scripts/join.js" defer></script>
+</body>
+</html>
