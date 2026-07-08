@@ -1,11 +1,4 @@
-
-function setTimestamp() {
-    const timestampField = document.getElementById('timestamp');
-    if (timestampField) {
-        timestampField.value = Date.now();
-    }
-}
-
+// --- ANIMAÇÃO CARDS ---
 function animateCards() {
     const cards = document.querySelectorAll('.level-card');
     
@@ -20,6 +13,7 @@ function animateCards() {
     });
 }
 
+// --- CONFIG MOD ---
 function setupModals() {
     const modalLinks = document.querySelectorAll('[data-modal-target]');
     const closeButtons = document.querySelectorAll('.modal .close-btn');
@@ -51,8 +45,22 @@ function setupModals() {
     });
 }
 
+// --- FORM ---
+function setupTimestampOnSubmit() {
+    const form = document.querySelector('.membership-form');
+    if (form) {
+        form.addEventListener('submit', () => {
+            const timestampField = document.getElementById('timestamp');
+            if (timestampField) {
+                timestampField.value = Date.now(); // Captura o exato momento do clique de envio
+            }
+        });
+    }
+}
+
+// --- GAP ---
 document.addEventListener('DOMContentLoaded', () => {
-    setTimestamp();
+    setupTimestampOnSubmit(); // Modificado para escutar o submit
     setupModals();
     animateCards();
 });
