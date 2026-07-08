@@ -1,3 +1,10 @@
+function sanitizeHTML(str) {
+    if (!str) return '';
+    const temp = document.createElement('div');
+    temp.textContent = str; 
+    return temp.innerHTML;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const detailsDiv = document.getElementById('confirmation-details');
@@ -13,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'phone': 'Telefone Celular',
         'orgname': 'Nome da Organização',
         'timestamp': 'Timestamp de Envio'
- 
     };
 
     for (const [key, label] of Object.entries(requiredFields)) {
@@ -31,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             output += `
                 <tr>
                     <td><strong>${label}:</strong></td>
-                    <td>${value}</td>
+                    <td>${sanitizeHTML(value)}</td> 
                 </tr>
             `;
         }
