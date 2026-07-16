@@ -22,7 +22,7 @@ h1, h2, h3, h4 {
 }
 
 a {
-    color: #01923f; 
+    color: #007a33; 
     text-decoration: none;
 }
 
@@ -202,7 +202,7 @@ footer {
 
 .cta-button {
     display: inline-block;
-    background-color: #01923f;
+    background-color: #007a33;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -283,9 +283,9 @@ footer {
 }
 
 .view-toggle button.active {
-    background-color: #01923f;
+    background-color: #007a33;
     color: white;
-    border-color: #01923f;
+    border-color: #007a33;
 }
 
 #member-display.grid-view {
@@ -368,12 +368,12 @@ footer {
 }
 
 .level-card.level-np {
-    border-color: #01923f; /* Verde da Câmara */
+    border-color: #007a33; /* Verde da Câmara */
     background-color: #E6FFF1; /* Fundo verde muito claro */
 }
 
 .level-card.level-np h3 {
-    color: #01923f;
+    color: #007a33;
 }
 
 .level-card.level-bronze {
@@ -471,13 +471,13 @@ footer {
 
 .membership-form fieldset {
     margin: 2rem 0;
-    border: 1px solid #01923f; 
+    border: 1px solid #007a33; 
     border-radius: 8px;
     padding: 1rem 2%;
 }
 
 .membership-form legend {
-    color: #01923f;
+    color: #007a33;
     margin: 0 1rem;
     padding: 0 0.5rem;
     font-size: 1.2rem;
@@ -510,7 +510,7 @@ footer {
 
 .membership-form .submit-btn {
     border: none;
-    background-color: #01923f;
+    background-color: #007a33;
     color: white;
     border-radius: 8px;
     padding: 0.75rem 1.5rem;
