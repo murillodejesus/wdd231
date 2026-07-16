@@ -133,9 +133,12 @@ footer {
 }
 
 .footer-social img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 35px; 
+    height: 35px;
+    object-fit: cover;
+    border-radius: 6px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease-in-out; 
 }
 
 .footer-info a {
@@ -151,14 +154,6 @@ footer {
     gap: 15px; 
 }
 
-.footer-social img {
-    width: 35px; 
-    height: 35px;
-    object-fit: cover;
-    border-radius: 6px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
-    transition: all 0.3s ease-in-out; 
-}
 
 .footer-social a:hover img {
     transform: translateY(-4px); 
